@@ -41,7 +41,7 @@
 
 //mongoose conectando ao db
     mongoose.connect(MONGO_CNSTRING).then(()=>console.log("conectado ao mongodb")).catch((error)=>console.log("ocorreu o seguinte error "+error))
-    //mongodb+srv://michael:147852963@blogcluster.koa9jsy.mongodb.net/?retryWrites=true&w=majority
+
 //css 
     const path = require("path") //o path é arquivo padrão do express e para podermos usar style no handlebars é necessiário importar ele
     app.use(express.static(path.join(__dirname, "public"))) // neste projeto foi utilizado o bootstrap, com essa função é possível no arquivo main.handlebars tenha acesso a pasta public como pasta raiz.
