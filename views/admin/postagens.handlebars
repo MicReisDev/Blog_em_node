@@ -1,0 +1,22 @@
+<h1>lista de postagens:</h1>
+{{#each postagens}}
+  <div class="card">
+    <div class="card-body">
+      <div class="d-grid gap-2 d-md-flex justify-content-between">
+        <h4>{{titulo}}</h4>
+        <form action="/admin/postagens/excluir" method="post">
+          <input type="hidden" name="id" id="id" value="{{_id}}">
+          <a href="/admin/postagens/editar/{{_id}}" class="btn btn-primary me-md-2 ">editar</a>
+          <button type="submit" class="btn btn-danger">X</button>
+        </form>
+      </div>
+      <p>Descricão: <br>{{descricao}}</p>
+      <small>{{data}} | categoria: {{categoria.nome}}</small>
+    </div>
+  </div>
+<br>
+{{else}}
+<h4>nenhuma postagem registrada</h4>
+{{/each}}
+
+<a href="/admin/postagens/add" class="btn btn-primary">Adicionar postagem</a>

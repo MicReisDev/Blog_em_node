@@ -1,0 +1,45 @@
+
+<div class="row align-items-center justify-content-around">
+  <div class="row">
+    <h2 class="col-10">
+      Lista de categorias
+    </h2>   
+
+    <a href="/admin/categorias/add" class="col btn btn-primary ">Nova categoria</a>
+  </div>
+</div>
+  <br>
+  <hr>
+  <br>
+
+
+{{#each categorias}}
+
+<div class="card mt-4">
+  <div class="card-header align-items-center">
+    <div class="row align-items-center justify-content-around">
+      <h4 class="col"> {{nome}}</h4>
+      <h6 class="col col-6 lead">{{data}}</h6>  
+      <div class="col ">
+        <a href="/admin/categorias/editar/{{_id}}" class="btn btn-primary lead">
+          EDITAR
+        </a>
+      </div>
+      <form action="categorias/excluir" method="post" class="col">
+        <input name="id" type="hidden" value="{{_id}}">
+        <button type="submit" class="btn btn-danger ">EXCLUIR</button>
+      </form>
+    </div>
+  </div>
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+      <small>{{slug}}</small>
+    </blockquote>
+  </div>
+</div>
+
+{{else}}
+<h4>Você ainda não adicionou nenhuma categoria!</h4>
+{{/each}}
+
+

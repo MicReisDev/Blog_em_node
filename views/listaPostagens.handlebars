@@ -1,0 +1,17 @@
+{{#if postagem}}
+<h2 >Postagens recentes da categoria: {{categoria}}</h2>
+{{#each postagem}}
+<div class="card mt-4">
+  <div class="card-body">
+    <div class="d-grid gap-2 d-md-flex justify-content-between">
+      <h5 class="card-title">{{titulo}}</h5>
+      <small>{{data}}</small>
+    </div>
+    <p class="card-text">{{descricao}}</p>
+    <a href="/post/{{_id}}" class="btn btn-primary">saiba mais</a>
+  </div>
+</div>
+{{/each}}
+{{else}}
+<h2 class="display-6">Ainda não há nenhuma postagem da categoria <b>{{categoria}}</b> </h2>
+{{/if}}

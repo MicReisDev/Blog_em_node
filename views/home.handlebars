@@ -1,0 +1,57 @@
+
+<div>
+  <h1 class="display-4">Olá pessoal!</h1>
+  <p >Meu nome é Michael, sou fullstack developer e este é o meu segundo site em node, é um blog simples mas com um back-end completo.</p>
+  <hr class="my-4">
+  
+</div>
+
+<div class="accordion" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        sobre o projeto
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <p>Este site foi criado para apresentar as minhas habilidades como <b>back-end</b>, nele foi utilizado <b>node</b> para desenvolver a aplicação usando banco de dados não relacional, o <b>mongodb</b>. O handlebars foi utilizado para o consumo do front-end combinado ao bootstrap para para estilização.</p>
+        <b>Neste blog é possível:</b>
+        <ul>
+          <li> <a href="/usuario/registro">Criar</a> um usuário </li>
+          <li> <a href="/usuario/login">Logar</a> usuário criado </li>
+          <li>  Visualizar os post por ordem de <a href="/categorias">categoria</a> ou postagens recentes</li>
+          <li>Criar, alterar e excluir postagens e categorias caso tenha a permissão ADMIN</li>
+        </ul>
+        <p>As categorias são divisões dentro do site para identificar temas, por ex: política, tecnologia, meio ambiente e etc...</p>
+        <p>As postagens são iguais a de um blog comum, porém apenas texto.</p>
+        <br>
+      </div>
+    </div>
+  </div>
+</div>
+    <p class="lead">
+    Mais sobre mim: <br>
+    <a class="btn btn-primary btn-lg" href="https://github.com/MicReisDev" role="button">Conheça mais projetos</a>
+  </p>
+
+
+<br>
+<hr>
+<br>
+
+<h2 >Postagens recentes:</h2>
+{{#each postagens}}
+<div class="card mt-4">
+  <div class="card-body">
+    <div class="d-grid gap-2 d-md-flex justify-content-between">
+      <h5 class="card-title">{{titulo}}</h5>
+      <small>{{data}}</small>
+    </div>
+    <p class="card-text">{{descricao}}</p>
+    <a href="/post/{{_id}}" class="btn btn-primary">saiba mais</a>
+  </div>
+</div>
+{{else}}
+<h2>Ainda não há nenhuma postagem</h2>
+{{/each}}

@@ -1,0 +1,16 @@
+{{#if postagem}}
+<h3>{{postagem.titulo}} 
+  <span>
+    <p class="lead">
+      {{postagem.slug}} | {{postagem.data}}
+    </p>
+  </span>
+</h3>
+<hr>
+<h4 class="lead">Descrição: <br>{{postagem.descricao}}</h4>
+<br>
+<h3 class="display-6">Tópico: <br>{{postagem.conteudo}}</h3>
+
+{{else}}
+<h2>Essa postagem não existe!</h2>
+{{/if}}

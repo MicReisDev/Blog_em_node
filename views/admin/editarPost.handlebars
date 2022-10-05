@@ -1,0 +1,29 @@
+
+    <h1>Editar:</h1>
+
+  <form action="/admin/postagens/editar" method="post">
+    <input type="hidden" name="id" id="id" value="{{postagem._id}}">
+    <label for="titulo">Titulo:</label>
+    <input type="text" name="titulo" class="form-control" value="{{postagem.titulo}}"required>
+
+    <label for="slug">Slug:</label>
+    <input type="text" name="slug" class="form-control" value="{{postagem.slug}}" required>
+
+    <label for="descricao">Descricão:</label>
+    <input type="text" name="descricao" class="form-control" value="{{postagem.descricao}}"required>
+
+    <label for="conteudo">Conteudo:</label>
+    <textarea name="conteudo" cols="30" rows="5" class="form-control" >{{postagem.conteudo}}</textarea required>
+    
+    <label for="categoria">Categoria:</label>
+    <select name="categoria" class="form-select" required>
+      {{#each categorias}}
+      <option value="{{_id}}">{{nome}}</option>
+      {{else}}
+      <option value="0">Não existem categorias registradas</option>
+      {{/each}}
+    </select>
+
+    <br>
+    <button type="submit" class="btn btn-primary">postagens</button>
+  </form>

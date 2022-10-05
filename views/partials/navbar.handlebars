@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-lg bg-primary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">HOME</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="/categorias">Categorias</a>
+        </li>
+      </ul>
+      {{#if user}}
+        {{#each user}}
+          {{#if nome}}
+            <div class="dropdown">
+              <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                {{nome}}
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+
+                  {{#if admin}}
+                  <a class="dropdown-item" href="/admin/postagens">Postagens</a>
+                  <a class="dropdown-item" href="/admin/categorias">Categoria</a>             
+                   {{/if }}
+
+                  <a class="dropdown-item" href="/usuario/sair">Sair</a>
+                </li>
+              </ul>
+            </div>
+          {{/if}}
+        {{/each}}
+      {{else}}
+      <a class="nav-link" href="/usuario/login">Entrar</a>
+      {{/if}}
+    </div>
+  </div>
+</nav>
+
